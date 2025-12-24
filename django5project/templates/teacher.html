@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% block content %}
+<div class="card" style="height: 30rem; width: 20rem;">
 <form method="post" enctype="multipart/form-data">
      {% csrf_token %}
-    {{form}}
+    {{form|crispy}}
     <button type="submit">submit</button>
 </form>
-</body>
-</html>
+</div>
+{% endblock %}
