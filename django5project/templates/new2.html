@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>name</th>
+        <th>email</th>
+        <th>phone</th>
+        <th>image</th>
+        <th>address</th>
+    </tr>
+{% for i in data %}
+    <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.phone}}</td>
+        <td><img src="{{ i.image.url }}" height="40px" width="40px" alt="img"></td>
+        <td>{{i.address}}</td>
+        <td><a href="{% url 'sixth_data' i.id %}"><button>edit</button></a>
+        <button>delete</button></td>
+    </tr>
+{% endfor %}
+</table>
+
+
+</body>
+</html>
